@@ -29,7 +29,6 @@ bin/
 .DS_Store
 
 ### MyRules
-/src/module_2
 /src/module_3
 /out
 
