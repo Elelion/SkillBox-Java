@@ -29,7 +29,6 @@ bin/
 .DS_Store
 
 ### MyRules
-/src/module_3
 /out
 
 hs_err_pid71908.log
