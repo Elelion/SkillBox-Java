@@ -26,15 +26,17 @@ public class _5_8_practical_main {
 
 
         // Задание №2
-        _5_8_2_practical_Dimensions dimensions = new _5_8_2_practical_Dimensions(
-            100, 200, "address",
-            true, "219922FFF", false
+        _5_8_2_practical_Cargo cargo = new _5_8_2_practical_Cargo(
+            200, "address", true,
+            "219922FFF", false
         );
+        cargo.setDimension(10, 20, 10, 2);
+        cargo.setDimension(10, 20, 101, 2);
 
-        System.out.println(dimensions);
+        System.out.println(cargo);
         System.out.println("...");
-        System.out.println(dimensions.setAddress("->[ new addr ]<-"));
+        System.out.println(cargo.setAddress("->[ new addr ]<-"));
         System.out.println("...");
-        System.out.println(dimensions);
+        System.out.println(cargo);
     }
 }
