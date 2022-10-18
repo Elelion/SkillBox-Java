@@ -119,7 +119,7 @@ public class _6_8_1_practical_Basket {
 
         this.totalWeight += weight;
         totalPriceLocalBasket += countLocalItem * price;
-        totalSum += totalPriceLocalBasket;
+        totalSum += countLocalItem * price;
     }
 
     /**/
