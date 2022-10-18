@@ -57,10 +57,12 @@ public class _5_8_2_practical_Cargo {
     private final boolean isProperty; // свойство — можно ли переворачивать;
     private final String registrationNumber; // регистрационный номер
     private final boolean isFragile; // является ли груз хрупким.
+    private final _5_8_2_practical_Dimensions dimensions;
 
-    public _5_8_2_practical_Cargo(int weight, String address, boolean isProperty,
-        String registrationNumber, boolean isFragile
+    public _5_8_2_practical_Cargo(_5_8_2_practical_Dimensions dimensions, int weight, String address,
+        boolean isProperty, String registrationNumber, boolean isFragile
     ) {
+        this.dimensions = dimensions;
         this.weight = weight;
         this.address = address;
         this.isProperty = isProperty;
@@ -71,35 +73,31 @@ public class _5_8_2_practical_Cargo {
     /**/
 
     public _5_8_2_practical_Cargo setWeight(int weight) {
-        return new _5_8_2_practical_Cargo(weight, address, isProperty,
+        return new _5_8_2_practical_Cargo(dimensions, weight, address, isProperty,
             registrationNumber, isFragile);
     }
 
     public _5_8_2_practical_Cargo setAddress(String address) {
-        return new _5_8_2_practical_Cargo(weight, address, isProperty,
+        return new _5_8_2_practical_Cargo(dimensions, weight, address, isProperty,
             registrationNumber, isFragile);
     }
 
     public _5_8_2_practical_Cargo setProperty(boolean isProperty) {
-        return new _5_8_2_practical_Cargo(weight, address, isProperty,
+        return new _5_8_2_practical_Cargo(dimensions, weight, address, isProperty,
             registrationNumber, isFragile);
     }
 
     public _5_8_2_practical_Cargo setRegistrationNumber(String registrationNumber) {
-        return new _5_8_2_practical_Cargo(weight, address, isProperty,
+        return new _5_8_2_practical_Cargo(dimensions, weight, address, isProperty,
             registrationNumber, isFragile);
     }
 
     public _5_8_2_practical_Cargo setFragile(boolean isFragile) {
-        return new _5_8_2_practical_Cargo(weight, address, isProperty,
+        return new _5_8_2_practical_Cargo(dimensions, weight, address, isProperty,
             registrationNumber, isFragile);
     }
 
     /**/
-
-    public _5_8_2_practical_Dimensions setDimension(int widthSize, int heightSize, int longSize, int quantity) {
-        return new _5_8_2_practical_Dimensions(widthSize, heightSize, longSize, quantity);
-    }
 
     public String toString() {
         return weight + " масса \n" +
