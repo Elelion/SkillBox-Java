@@ -1,7 +1,7 @@
 package module_2;
 
 // импортировать ВСЕ используемые модули из...
-import core.module_2.*;
+//import core.module_2.*;
 
 // те запись выше аналогично этим двум:
 //import core.module_1.Camera;
@@ -44,36 +44,36 @@ public class RoadController_2x {
 
         // генерируем заданное кол-во автомобилей
         for (int i = 0; i < carsCount; i++) {
-            Car car = Camera.getNextCar();
-            System.out.println(car);
+            // Car car = Camera.getNextCar();
+            // System.out.println(car);
 
             //Пропускаем автомобили спецтранспорта бесплатно
-            if (car.isSpecial) {
-                openWay();
+            // if (car.isSpecial) {
+            //    openWay();
 
                 /**
                  * работает в циклах, и дает команду VM Java не выполнять
                  * код дальше, а идти в начало и выполнять код снова
                  */
-                continue;
-            }
+                // continue;
+            // }
 
             //Проверяем высоту и массу автомобиля, вычисляем стоимость проезда
-            int price = calculatePrice(car); // int
+            // int price = calculatePrice(car); // int
 
             // если цена не назначена - то возвращаемся в начало кода, иначе идем дальше
-            if (price == -1) {
-                continue;
-            }
+            // if (price == -1) {
+                // continue;
+            // }
 
-            System.out.println("Общая сумма к оплате: " + price + " руб.");
+            // System.out.println("Общая сумма к оплате: " + price + " руб.");
         }
     }
 
     /**
      * Расчёт стоимости проезда исходя из массы и высоты
      */
-    private static int calculatePrice(Car car) {
+    private static int calculatePrice(core.module_2.Car car) {
         // int
         int carHeight = car.height;
         int price = 0;
