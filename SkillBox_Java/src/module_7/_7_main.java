@@ -12,7 +12,7 @@ public class _7_main {
 
         // Лекция 7.5
         System.out.println("Лекция 7.5");
-        _7_5_lecture_numbers numbers = new _7_5_lecture_numbers();
+        _7_5_lecture_numbers numbers = new module_7._7_5_lecture_numbers();
 
         System.out.println("---");
 
