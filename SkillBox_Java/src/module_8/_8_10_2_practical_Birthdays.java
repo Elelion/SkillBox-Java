@@ -3,6 +3,7 @@ package module_8;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class _8_10_2_practical_Birthdays {
@@ -76,56 +77,98 @@ public class _8_10_2_practical_Birthdays {
 
     /**/
 
+    private static LocalDate birthday;
+    private static final LocalDate today = LocalDate.now();
+    private static int yearsOld;
+
+    /**/
+
     public static String collectBirthdays(int year, int month, int day) {
-
-        /**
-         * FIXME:
-         * тут бы я реализовал проверку на введенные данные,
-         * те месяцев не больше 12, и подумал бы над проверкой дней...
-         * что бы было не больше 28 - 29 - 30 - 31
-         * или сделал бы через try / catch, но с ним в Java что то я пока
-         * не разобрался особо...
-         */
-        LocalDate birthday = LocalDate.of(year, month, day);
-        LocalDate today = LocalDate.now();
+        birthday = LocalDate.of(year, month, day);
         int count = 0;
+        yearsOld = 0;
+        extractYearsOld();
 
-        /**/
-
-        // Вариант №1
-        /*
-        for (int i = birthday.getYear(); i < today.getYear(); i++) {
-            System.out.println(count + ": " + birthday.getDayOfMonth() + "." +
-                birthday.getMonthValue() + "." + i + " - " +
-                birthday.getDayOfWeek());
-
-            birthday.plusYears(count);
-            count++;
+        if (isCorrectBirthdays()) {
+            return "";
         }
-        */
 
-        /**/
+        if (isZeroBirthdays()) {
+            return "0 - " + formattedDate(birthday, ".") + " - " +
+                extractBirthdayDay(birthday);
+        }
 
-        // Вариант №2
-        for (int i = birthday.getYear(); i < today.getYear(); i++) {
-            LocalDate date = birthday.plusYears(count);
+        if (today.getYear() - birthday.getYear() == 0) {
+            return count + " - " + formattedDate(birthday, ".") + " - " +
+                extractBirthdayDay(birthday);
+        }
 
-            String dateString = LocalDate.parse(
-                date.toString()
-                // DateTimeFormatter.ofPattern( "yyyy-MM-dd")
-            ).format(
-                DateTimeFormatter.ofPattern("dd-MM-yyyy")
-            );
+        if (today.getYear() - birthday.getYear() >= 1) {
+            String result = "";
 
-            if (date.isAfter(birthday)) {
-                System.out.println(count + " - " + dateString);
+            for (int i = 0; i <= yearsOld; i++) {
+                LocalDate date = birthday.plusYears(count);
+                result += i + " - " + formattedDate(date, ".") + " - " +
+                    extractBirthdayDay(date) + System.lineSeparator();
+                count++;
             }
 
-            count++;
+            return result;
         }
 
-        return "Текущая дата: " + today + System.lineSeparator() +
-            "У вас было " + count + " ДР";
+        if (yearsOld > 2) {
+            for (int i = 0; i <= yearsOld; i++) {
+                LocalDate date = birthday.plusYears(count);
+                printDate(count, date);
+                count++;
+            }
+        }
+
+        return "";
     }
 
+    /**/
+
+    private static boolean isZeroBirthdays() {
+        return today.getYear() - birthday.getYear() == 1 &&
+            today.getMonthValue() < birthday.getMonthValue() &&
+            today.getDayOfMonth() < birthday.getDayOfMonth();
+    }
+
+    private static boolean isCorrectBirthdays() {
+        return today.getYear() < birthday.getYear() ||
+            today.getYear() == birthday.getYear() &&
+                today.getMonthValue() < birthday.getMonthValue();
+    }
+
+    /**/
+
+    private static void extractYearsOld() {
+        int count = 0;
+
+        for (int i = birthday.getYear() ; i <= today.getYear(); i++) {
+            LocalDate date = birthday.plusYears(count);
+            yearsOld = date.getYear() - birthday.getYear();
+            count++;
+        }
+    }
+
+    private static String formattedDate(LocalDate date, String symbol) {
+        return LocalDate.parse(
+            date.toString(),
+            DateTimeFormatter.ofPattern("yyyy-MM-dd")
+        ).format(
+            DateTimeFormatter.ofPattern("dd" + symbol + "MM" + symbol + "yyyy")
+        );
+    }
+
+    private static String extractBirthdayDay(LocalDate date) {
+        return date.getDayOfWeek().getDisplayName(
+            TextStyle.SHORT_STANDALONE, Locale.ENGLISH);
+    }
+
+    private static void printDate(int count, LocalDate date) {
+        System.out.println(count + " - " +
+            formattedDate(date, ".") + " - " + extractBirthdayDay(date));
+    }
 }
