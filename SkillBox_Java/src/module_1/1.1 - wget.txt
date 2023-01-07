@@ -1,0 +1,4 @@
+# получить данные по API 
+# API тут: https://weatherstack.com/dashboard
+
+wget -cq "http://api.weatherstack.com/current?access_key=b3d233b733b92f0ee31c00ead8b473a0&query=Moscow" -O -

@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SkillBox_Java_project:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SkillBox_Java_project_jar</output-path>
+    <root id="archive" name="SkillBox_Java_project.jar">
+      <element id="module-output" name="SkillBox_Java_project" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/junit/junit/3.8.2/junit-3.8.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/SkillBox_Java/lib/json-simple-1.1.1.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
