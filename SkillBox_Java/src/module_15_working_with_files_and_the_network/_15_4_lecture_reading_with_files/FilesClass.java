@@ -15,6 +15,7 @@ public class FilesClass {
             + pathRootDir + File.separator
             + pathLectureDir + File.separator
             + "text.txt";
+
     public FilesClass() {
         StringBuilder builder = new StringBuilder();
 

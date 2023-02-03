@@ -1,16 +1,23 @@
 package module_15_working_with_files_and_the_network;
 
+import module_15_working_with_files_and_the_network._15_10_lecture_configuration_files.ConfigurationFiles;
 import module_15_working_with_files_and_the_network._15_2_lecture_FileInputStream.FileInputStreamClass;
 import module_15_working_with_files_and_the_network._15_3_lecture_BufferedReader.BufferedReaderClass;
 import module_15_working_with_files_and_the_network._15_4_lecture_reading_with_files.FilesClass;
 import module_15_working_with_files_and_the_network._15_4_practical_FolderSizeMeter.FolderSizeMeter;
+import module_15_working_with_files_and_the_network._15_5_lecture_writing_file.WritingFile;
+import module_15_working_with_files_and_the_network._15_6_practical_TableFiles.TableFiles;
+import module_15_working_with_files_and_the_network._15_8_lecture_parsing_HTML_files.ParsingHTML;
+import module_15_working_with_files_and_the_network._15_8_practical_ImagesDownloader.ImagesDownloader;
+import module_15_working_with_files_and_the_network._15_9_practical_parsingJSON.ParsingJSON;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
 import java.util.Scanner;
 
 public class _15_main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Лекция 15.1");
 //        FileClass lecture1 = new FileClass();
         System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
@@ -36,6 +43,8 @@ public class _15_main {
 //        FilesClass lecture4 = new FilesClass();
         System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
         System.out.println("-");
+
+        /**/
 
         System.out.println("Лекция 15.4 - практика");
         FolderSizeMeter practical4_1 = new FolderSizeMeter();
@@ -84,6 +93,47 @@ public class _15_main {
 
         /* ----------------------------------------------------------------- */
 
+        System.out.println("Лекция 15.5");
+        // WritingFile lecture5 = new WritingFile();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
 
+        /* ----------------------------------------------------------------- */
+
+        System.out.println("Лекция 15.6 - практика");
+//        TableFiles lecture6 = new TableFiles();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
+
+        /* ----------------------------------------------------------------- */
+
+        System.out.println("Лекция 15.8");
+//        ParsingHTML parsingHTML = new ParsingHTML();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
+
+        System.out.println("Лекция 15.8 - практика");
+//        ImagesDownloader ImagesDownloader = new ImagesDownloader();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
+
+        /* ----------------------------------------------------------------- */
+
+        System.out.println("Лекция 15.9");
+//        ParsingJSON parsingJSON = new ParsingJSON();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
+
+        System.out.println("Лекция 15.9 - практика");
+//        ParsingJSON parsingJSON = new ParsingJSON();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
+
+        /* ----------------------------------------------------------------- */
+
+        System.out.println("Лекция 15.10");
+        ConfigurationFiles configurationFiles = new ConfigurationFiles();
+        System.out.println(System.lineSeparator() + "-" + System.lineSeparator());
+        System.out.println("-");
     }
 }
