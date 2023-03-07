@@ -20,6 +20,11 @@ public class _16_main {
 
         /* ----------------------------------------------------------------- */
 
+        /**
+         * Лекции 16.4 - 16.11 - не работают в данном проекте, тк для них
+         * нужно создавать отдельный Maven проект и дефолтным путем для
+         * файла конфига Hibernate
+         */
         System.out.println("Лекция 16.4");
         Hibernate hibernate = new Hibernate();
         System.out.println(System.lineSeparator() + "-" + System.lineSeparator());

@@ -1,0 +1,4 @@
+#login and password to connect to the database
+url=jdbc:mysql://localhost:3306/skillbox
+user=root
+pass=administrator

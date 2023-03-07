@@ -2,10 +2,12 @@ package module_16_working_with_mysql._16_4_lecture_hibernate;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
 
 import java.io.File;
 
@@ -54,20 +56,46 @@ public class Hibernate {
      * те раз сделал а потом только получаешь данные
      */
     public Hibernate() {
-        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-            .configure(DATA_FILE + "hibernate.cfg.xml")
-            .build();
+        /**
+         * но так работать НЕ будет
+         * для hibernate нужен новый Maven проект с нужными зависимости
+         * и что бы конфиг лежал обязательно по пути
+         * src/main/resources/hibernate.cfg.xml
+         */
+//        StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
+//            .configure(DATA_FILE + "hibernate.cfg.xml")
+//            .build();
 
-        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
-        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
-
-        Session session = sessionFactory.openSession();
+//        Metadata metadata = new MetadataSources(registry).getMetadataBuilder().build();
+//        SessionFactory sessionFactory = metadata.getSessionFactoryBuilder().build();
+//        Session session = sessionFactory.openSession();
+        Session session = HibernateUtil.getSessionFactory().openSession();
 
         // получаем товар из таблици good с id = 1
-        Good good = session.get(Good.class, 1);
-        System.out.println(good);
+//        Good good = session.get(Good.class, 1);
+//        System.out.println(good.getName());
+
+        Transaction transaction = session.beginTransaction();
+
+        // сохранить новую запись
+        /*
+        Good good = new Good();
+        good.setName("Новая вещь");
+        good.setPrice(200);
+        good.setCategoryId(3);
+        good.setCount(50);
+        */
+
+        // изменить имеющуюся
+        Good good = session.get(Good.class, 1059);
+        good.setName("Измененная вещь");
+
+        // сохраняем наши данные в БД
+        session.save(good);
 
         // обязательно!!!
-        sessionFactory.close();
+        transaction.commit();
+//        sessionFactory.close();
+        HibernateUtil.shutdown();
     }
 }
