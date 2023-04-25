@@ -24,5 +24,6 @@
     <orderEntry type="library" name="lombok" level="project" />
     <orderEntry type="library" name="org.projectlombok" level="project" />
     <orderEntry type="library" name="projectlombok.lombok" level="project" />
+    <orderEntry type="library" name="imgscalr.lib" level="project" />
   </component>
 </module>

@@ -30,6 +30,7 @@ bin/
 
 ### MyRules
 /out
+/SkillBox_Java/src/module_17_multithreading/_17_4_practical_Multithreading/dst
 
 hs_err_pid71908.log
 replay_pid71908.log

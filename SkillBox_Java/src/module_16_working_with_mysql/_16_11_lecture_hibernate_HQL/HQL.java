@@ -27,12 +27,15 @@ public class HQL {
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
 
+        /*
+
 //         studentId = 1; courseId = 2
         Subscription subscription = session.get(
             Subscription.class,
             new SubscriptionKey(1, 2));
 
         System.out.println(subscription.getSubscriptionDate());
+         */
 //
         /*
         для примера из ДЗ
