@@ -1,0 +1,4 @@
+#test config
+#Sun Jan 15 22:30:06 MSK 2023
+cacheSize=10000
+timeout=3600

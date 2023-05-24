@@ -1,0 +1,41 @@
+### IntelliJ IDEA ###
+SkillBox_Java/out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### MyRules
+/out
+
+hs_err_pid71908.log
+replay_pid71908.log
+
+img.png
+img_1.png
+img_2.png
+img_3.png
+img_4.png
