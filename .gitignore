@@ -1,0 +1,39 @@
+### IntelliJ IDEA ###
+SkillBox_Java/out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### MyRules
+/out
+/SkillBox_Java/src/module_17_multithreading/_17_4_practical_Multithreading/dst
+
+hs_err_pid71908.log
+replay_pid71908.log
+
+SkillBox_Java/src/module_18_efficiency/res/data-1572M.xml
+SkillBox_Java/src/module_18_efficiency/res/data-18M.xml
